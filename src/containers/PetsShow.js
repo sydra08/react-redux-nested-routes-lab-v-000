@@ -1,3 +1,25 @@
+// first attempt 5/28/18
+// import React from 'react';
+// import { connect } from 'react-redux';
+//
+// const PetsShow = ({ pet }) =>
+//   <div className="col-md-8">
+//     <h2>{pet.name}</h2>
+//     <p>{pet.description}</p>
+//   </div>;
+//
+// const mapStateToProps = (state, ownProps) => {
+//   const pet = state.pets.find(pet => pet.id === ownProps.match.params.petId);
+//   if (pet) {
+//     return { pet }
+//   } else {
+//     return { pet: {} }
+//   }
+// };
+//
+// export default connect(mapStateToProps)(PetsShow);
+
+// second attempt 11/18/18
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -8,7 +30,8 @@ const PetsShow = ({ pet }) =>
   </div>;
 
 const mapStateToProps = (state, ownProps) => {
-  const pet = state.pets.find(pet => pet.id === ownProps.match.params.petId);
+  const pet = state.pets.find(p => p.id === ownProps.match.params.petId)
+  
   if (pet) {
     return { pet }
   } else {
